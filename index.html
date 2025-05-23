@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duke Soccer Team Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Duke Soccer Team Manager</h1>
+        
+        <!-- Attendance Section -->
+        <section id="attendance" class="section">
+            <h2>Attendance</h2>
+            <div class="attendance-controls">
+                <button id="check-all">Check All</button>
+                <button id="uncheck-all">Uncheck All</button>
+            </div>
+            <div class="attendance-grid">
+                <!-- Attendance checkboxes will be dynamically added here -->
+            </div>
+            <div class="attendance-controls">
+                <button id="confirm-attendance">Confirm Attendance</button>
+                <button id="update-attendance" style="display: none;">Update Attendance</button>
+            </div>
+        </section>
+
+        <!-- Field Display Section -->
+        <section id="field-display" class="section" style="display: none;">
+            <h2>Field Positions</h2>
+            <div class="soccer-field">
+                <div class="field-half">
+                    <div class="position-row forward">
+                        <div class="position" data-position="forward-left">
+                            <div class="position-label">Left Forward</div>
+                            <div class="player-name">LF</div>
+                        </div>
+                        <div class="position" data-position="forward-center">
+                            <div class="position-label">Center Forward</div>
+                            <div class="player-name">CF</div>
+                        </div>
+                        <div class="position" data-position="forward-right">
+                            <div class="position-label">Right Forward</div>
+                            <div class="player-name">RF</div>
+                        </div>
+                    </div>
+                    <div class="position-row midfield">
+                        <div class="position" data-position="midfield-left">
+                            <div class="position-label">Left Midfield</div>
+                            <div class="player-name">LM</div>
+                        </div>
+                        <div class="position" data-position="midfield-right">
+                            <div class="position-label">Right Midfield</div>
+                            <div class="player-name">RM</div>
+                        </div>
+                    </div>
+                    <div class="position-row defense">
+                        <div class="position" data-position="defense-left">
+                            <div class="position-label">Left Defense</div>
+                            <div class="player-name">LD</div>
+                        </div>
+                        <div class="position" data-position="defense-center">
+                            <div class="position-label">Center Defense</div>
+                            <div class="player-name">CD</div>
+                        </div>
+                        <div class="position" data-position="defense-right">
+                            <div class="position-label">Right Defense</div>
+                            <div class="player-name">RD</div>
+                        </div>
+                    </div>
+                    <div class="position-row goalie">
+                        <div class="position" data-position="goalie">
+                            <div class="position-label">Goalie</div>
+                            <div class="player-name">GK</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="sub-preview" class="sub-preview" style="display: none;">
+                <h3>Next Sub Preview</h3>
+                <div class="sub-preview-grid">
+                    <!-- Sub preview will be dynamically added here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Substitution Controls -->
+        <section id="substitution-controls" class="section" style="display: none;">
+            <h2>Substitution Controls</h2>
+            <div class="sub-controls">
+                <div class="sub-options">
+                    <label class="goalie-sub-option">
+                        <input type="checkbox" id="include-goalie-sub">
+                        Include Goalie in Substitution
+                    </label>
+                </div>
+                <button id="next-sub">Next Sub</button>
+                <button id="add-extra-sub">Add Extra Sub</button>
+                <div class="sub-count">
+                    Subs Used: <span id="subs-used">0</span>/<span id="total-subs">9</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Position Table -->
+        <section id="position-table" class="section" style="display: none;">
+            <h2>Position Assignments</h2>
+            <table id="positions-table">
+                <thead>
+                    <tr>
+                        <th>Position</th>
+                        <th>Player</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Position assignments will be dynamically added here -->
+                </tbody>
+            </table>
+        </section>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

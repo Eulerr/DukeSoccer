@@ -1,0 +1,295 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.section {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Attendance Section */
+.attendance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.attendance-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    font-size: 1.1em;
+}
+
+.attendance-item input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.attendance-item label {
+    cursor: pointer;
+    flex-grow: 1;
+}
+
+.attendance-controls {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Field Display */
+.soccer-field {
+    background-color: #4CAF50;
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+    aspect-ratio: 2/1;
+    margin: 20px 0;
+}
+
+.field-half {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.position-row {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0;
+}
+
+.position {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 5px;
+    min-width: 120px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.position:hover {
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.position-label {
+    font-size: 0.9em;
+    color: #666;
+    font-weight: bold;
+}
+
+.player-name {
+    font-size: 1.1em;
+    color: #2c3e50;
+}
+
+/* Substitution Controls */
+.sub-controls {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.sub-options {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.goalie-sub-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+.goalie-sub-option input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+button {
+    padding: 12px 24px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1.1em;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.sub-count {
+    margin-left: auto;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* Position Table */
+#positions-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 1.1em;
+}
+
+#positions-table th,
+#positions-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#positions-table th {
+    background-color: #f8f9fa;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .attendance-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .sub-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .sub-count {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .position {
+        min-width: 100px;
+        padding: 10px;
+    }
+
+    .position-label {
+        font-size: 0.8em;
+    }
+}
+
+/* Player Status Colors */
+.player-present {
+    background-color: #d4edda;
+}
+
+.player-absent {
+    background-color: #f8d7da;
+}
+
+.player-subbed {
+    background-color: #fff3cd;
+}
+
+/* Substitution Preview */
+.sub-preview {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+}
+
+.sub-preview h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.sub-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+}
+
+.sub-preview-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sub-preview-item .position {
+    font-weight: bold;
+    color: #2c3e50;
+    min-width: 120px;
+}
+
+.sub-preview-item .player {
+    color: #3498db;
+    font-weight: bold;
+}
+
+.sub-preview-item .arrow {
+    color: #666;
+    margin: 0 10px;
+    font-size: 1.2em;
+}
+
+.sub-preview-item .new-player {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.sub-preview-item .staying {
+    color: #f39c12;
+    font-weight: bold;
+}
